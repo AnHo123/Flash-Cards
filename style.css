@@ -1,0 +1,195 @@
+:root {
+    --card-width: 19%;
+    --container-item-margin: calc((100% - var(--card-width)*5)/5);
+    --from-width: calc(var(--card-width)*2 + var(--container-item-margin));
+    --btn-color: rgb(255 49 153);
+    --border-color: #e06a92;
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+html, body {
+    margin: 0;
+}
+/* container */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 0 40px;
+}
+.container-title {
+    font-size: 44px;
+    font-weight: 500;
+    font-family: 'Fredoka', sans-serif;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    color: var(--border-color);
+}
+.container-body {
+    padding-left: var(--container-item-margin);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+/* container item */
+.container-item {
+    margin: var(--container-item-margin);
+    margin-left: 0;
+    margin-top: 0;
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* form */
+.form {
+    width: var(--from-width);
+    
+}
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+.form-group label{
+    font-size: 14px;
+    font-weight: 500;
+}
+.btn:hover, .card-tools-item:hover {
+    opacity: 0.8;
+}
+.form-group input:not(#img-file) {
+    padding: 0 14px;
+    height: 40px;
+    width: 60%;
+    border: none;
+    outline: none;
+    box-shadow: 0px 1px 3px #9b9b9b;
+    border-radius: 4px;
+}
+.form-group .input-file{
+    width: 60%;
+    padding-top: 10px;
+    margin-left: 40%;
+}
+.form-message {
+    display: none;
+    width: 100%;
+    text-align: right;
+    padding-top: 2px;
+}
+.form-control.invalid {
+    border: 1px solid var(--border-color);
+    box-shadow: unset;
+} 
+.form-message.invalid {
+    display: block;
+    color: var(--btn-color);
+}
+.btn {
+    align-self: center;
+    width: 70px;
+    margin-top: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--btn-color);
+    border: unset;
+    border-radius: 4px;
+    display: block;
+}
+/* card */
+.card {
+    padding: 0;
+    width: var(--card-width);
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    overflow: hidden;
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-body {
+    width: 100%;
+    padding: 12px;
+}
+.card-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-style: italic;
+}
+.card-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+.card-tools {
+    width: 100%;
+    padding-top: 10px;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.card-tools-item {
+    padding: 4px 8px;
+    border-radius: 50%;
+    color: var(--btn-color);
+    border: 1.4px solid var(--border-color);
+    cursor: pointer;
+}
+/* responsive */
+
+/* phone */
+@media (max-width: 666.98px) { 
+    .form, .form-group input, .card {
+        width: 100%;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .form-group label {
+        margin-bottom: 10px;
+    }
+    .container-body {
+        padding-left: 0;
+    }
+    .container-item {
+        margin-right: 0;
+    }
+    .card img {
+        height: 240px;
+    }
+ }
+ /* tablet */
+ @media (min-width: 667px) and (max-width: 991.98px) { 
+    :root {
+        --card-width : 30%;
+        --container-item-margin: calc((100% - var(--card-width)*3)/3);
+    }
+    .container {
+        padding: 0 30px;
+    }
+
+    /* .container-item {
+        margin-top: 0;
+    } */
+  }
